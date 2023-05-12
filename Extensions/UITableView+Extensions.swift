@@ -15,4 +15,15 @@ extension UITableView {
         let nibCell = UINib(nibName: cellName, bundle: nil)
         register(nibCell, forCellReuseIdentifier: cellName)
     }
+    
+    /// Dequeue reusable cell using only the cell class type
+    func dequeueReusableCell<T>(_ type: T.Type, for indexPath: IndexPath) -> T where T: UITableViewCell {
+        let cellName = T.defaultReuseIdentifier
+        
+        guard let cell = dequeueReusableCell(withIdentifier: cellName, for: indexPath) as? T else {
+            fatalError("Couldn't dequeue cell with Identifier: \(cellName).")
+        }
+        
+        return cell
+    }
 }

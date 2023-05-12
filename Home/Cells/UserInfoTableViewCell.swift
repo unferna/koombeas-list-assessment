@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserInfoTableViewCell: UITableViewCell {
     @IBOutlet private weak var userImage: UIImageView!
@@ -22,5 +23,8 @@ class UserInfoTableViewCell: UITableViewCell {
         nameLabel.text = user.firstName + " " + user.lastName
         usernameLabel.text = user.username
         emailLabel.text = user.email
+        
+        guard let imageUrl = URL(string: user.pictureURL) else { return }
+        userImage.kf.setImage(with: imageUrl)
     }
 }
