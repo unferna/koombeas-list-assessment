@@ -8,16 +8,19 @@
 import UIKit
 
 class UserInfoTableViewCell: UITableViewCell {
-
+    @IBOutlet private weak var userImage: UIImageView!
+    
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func configureCell(with user: AppUser) {
+        nameLabel.text = user.firstName + " " + user.lastName
+        usernameLabel.text = user.username
+        emailLabel.text = user.email
+    }
 }
