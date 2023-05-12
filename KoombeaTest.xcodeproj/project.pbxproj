@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A82408B42A0E966700DA8BB1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A82408B32A0E966700DA8BB1 /* Kingfisher */; };
+		A82408B62A0EC8F900DA8BB1 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82408B52A0EC8F900DA8BB1 /* Collection+Extensions.swift */; };
 		A86DA70F2A0E86000093D6DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DA70E2A0E86000093D6DF /* AppDelegate.swift */; };
 		A86DA7112A0E86000093D6DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DA7102A0E86000093D6DF /* SceneDelegate.swift */; };
 		A86DA7132A0E86000093D6DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DA7122A0E86000093D6DF /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A82408B52A0EC8F900DA8BB1 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		A86DA70B2A0E86000093D6DF /* KoombeaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoombeaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86DA70E2A0E86000093D6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A86DA7102A0E86000093D6DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				A86DA74D2A0E8C3D0093D6DF /* UIView+Extensions.swift */,
 				A86DA74F2A0E8C4C0093D6DF /* UITableView+Extensions.swift */,
+				A82408B52A0EC8F900DA8BB1 /* Collection+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				A86DA70F2A0E86000093D6DF /* AppDelegate.swift in Sources */,
 				A86DA74E2A0E8C3D0093D6DF /* UIView+Extensions.swift in Sources */,
 				A86DA7112A0E86000093D6DF /* SceneDelegate.swift in Sources */,
+				A82408B62A0EC8F900DA8BB1 /* Collection+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

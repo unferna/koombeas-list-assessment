@@ -33,12 +33,27 @@ class ViewController: UIViewController {
     private func loadUsers() {
         dataService?.fetchUsers { [weak self] users, error in
             guard let self = self else { return }
+            guard users != nil else {
+                if let error = error {
+                    DispatchQueue.main.async {
+                        self.showError(error)
+                    }
+                }
+                return
+            }
+            
             self.users = users ?? []
             
             DispatchQueue.main.async {
                 self.usersTableView.reloadData()
             }
         }
+    }
+    
+    private func showError(_ error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
     }
 }
 

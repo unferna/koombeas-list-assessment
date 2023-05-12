@@ -7,10 +7,23 @@
 
 import Foundation
 
-enum UserDataServiceError: Error {
+enum UserDataServiceError: LocalizedError {
     case urlError
     case requestError(description: String)
     case castingError(description: String)
+    
+    var errorDescription: String? {
+        switch self {
+        case .urlError:
+            return "URL is invalid"
+        
+        case .requestError(let description):
+            return description
+        
+        case .castingError(let description):
+            return description
+        }
+    }
 }
 
 typealias UserCompletionType = ([AppUser]?, UserDataServiceError?) -> Void
