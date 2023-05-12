@@ -26,17 +26,22 @@ class UserInfoTableViewCell: UITableViewCell {
         containerView.layer.shadowOpacity = 0.3
         containerView.layer.shadowRadius = 10
         containerView.layer.cornerRadius = 8
-        containerView.layer.shouldRasterize = true
         
         userImage.layer.cornerRadius = 8
     }
     
-    func configureCell(with user: AppUser) {
-        nameLabel.text = user.firstName + " " + user.lastName
-        usernameLabel.text = user.username
-        emailLabel.text = user.email
+    func configureCell(with user: AppUser?) {
+        let firstName = user?.firstName ?? ""
+        let lastName = user?.lastName ?? ""
         
-        guard let imageUrl = URL(string: user.pictureURL) else { return }
+        nameLabel.text = firstName + " " + lastName
+        usernameLabel.text = user?.username
+        emailLabel.text = user?.email
+        
+        guard
+            let urlString = user?.pictureURL,
+            let imageUrl = URL(string: urlString)
+        else { return }
         userImage.kf.setImage(with: imageUrl)
     }
 }
