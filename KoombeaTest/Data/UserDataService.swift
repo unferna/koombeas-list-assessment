@@ -29,12 +29,15 @@ enum UserDataServiceError: LocalizedError {
 typealias UserCompletionType = ([AppUser]?, UserDataServiceError?) -> Void
 
 protocol UserDataServiceProtocol: AnyObject {
+    var baseAPIURL: String { get set }
     func fetchUsers(completion: @escaping UserCompletionType)
 }
 
 class UserDataService: UserDataServiceProtocol {
+    var baseAPIURL = "https://jserver-api.herokuapp.com"
+    
     func fetchUsers(completion: @escaping UserCompletionType) {
-        let usersAPI = "https://jserver-api.herokuapp.com/users"
+        let usersAPI = "\(baseAPIURL)/users"
         
         guard let url = URL(string: usersAPI) else {
             completion(nil, UserDataServiceError.urlError)

@@ -9,28 +9,40 @@ import XCTest
 @testable import KoombeaTest
 
 final class KoombeaTestTests: XCTestCase {
+    
+    var sut: UserDataServiceProtocol?
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = UserDataService()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testUserDataService_WhenGivenInvalidAPIURL_ShouldReturnUsersAsNil() {
+        sut?.baseAPIURL = "https//jserver-api.herokuapp.com"
+        
+        let expectation = expectation(description: "Fetch users expectation")
+        sut?.fetchUsers { users, error in
+            XCTAssertNil(users)
+            
+            expectation.fulfill()
         }
+        
+        wait(for: [expectation], timeout: 15)
     }
-
+    
+    func testUserDataService_WhenGivenValidAPIURL_ShouldReturnUsers() {
+        sut?.baseAPIURL = "https://jserver-api.herokuapp.com"
+        
+        let expectation = expectation(description: "Fetch users expectation")
+        sut?.fetchUsers { users, error in
+            XCTAssertNotNil(users)
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 15)
+    }
 }

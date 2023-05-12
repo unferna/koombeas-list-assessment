@@ -24,6 +24,8 @@
 		A86DA7492A0E8C050093D6DF /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86DA7472A0E8C050093D6DF /* UserInfoTableViewCell.xib */; };
 		A86DA74E2A0E8C3D0093D6DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DA74D2A0E8C3D0093D6DF /* UIView+Extensions.swift */; };
 		A86DA7502A0E8C4C0093D6DF /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DA74F2A0E8C4C0093D6DF /* UITableView+Extensions.swift */; };
+		A8D6D69F2A0EF5F6000EAB0E /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DA7422A0E87330093D6DF /* UserDataService.swift */; };
+		A8D6D6A02A0EF6E9000EAB0E /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DA73F2A0E865C0093D6DF /* AppUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -344,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D6D69F2A0EF5F6000EAB0E /* UserDataService.swift in Sources */,
+				A8D6D6A02A0EF6E9000EAB0E /* AppUser.swift in Sources */,
 				A86DA7262A0E86020093D6DF /* KoombeaTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
